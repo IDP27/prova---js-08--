@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+
+        
+const aluno = {
+    nome: "Felipe Melo",
+    idade: 16,
+    notas: [8.5, 7.0, 6.5],
+
+    
+    calcularMedia: function () {
+        let soma = this.notas.reduce((total, nota) => total + nota, 0);
+        return soma / this.notas.length;
+    }
+};
+
+
+aluno.notas = [...aluno.notas, 9.0];
+
+
+const { nome, idade } = aluno;
+
+
+function verificarSituacao(media) {
+    return media >= 7
+        ? "Aprovado "
+        : "Reprovado ";
+}
+
+
+console.log(`Nome: ${nome}`);
+console.log(`Idade: ${idade}`);
+console.log("Notas:");
+for (let i = 0; i < aluno.notas.length; i++) {
+    console.log(`Nota ${i + 1}: ${aluno.notas[i]}`);
+}
+
+const mediaFinal = aluno.calcularMedia();
+console.log(`Média Final: ${mediaFinal.toFixed(2)}`);
+
+const situacao = verificarSituacao(mediaFinal);
+console.log(`Situação: ${situacao}`);
+
+
+    </script>
+
+
+    
+    
+</body>
+</html>
